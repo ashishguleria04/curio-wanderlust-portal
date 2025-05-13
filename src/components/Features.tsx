@@ -1,5 +1,5 @@
 
-import { Lightbulb, BookOpen, Flask, Compass } from "lucide-react";
+import { Lightbulb, BookOpen, FlaskConical, Compass } from "lucide-react";
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -48,7 +48,7 @@ const Features = () => {
             delay={200}
           />
           <FeatureCard 
-            icon={<Flask className="h-6 w-6" />}
+            icon={<FlaskConical className="h-6 w-6" />}
             title="Research Findings"
             description="Access the latest research breakthroughs explained in easy-to-understand language."
             delay={300}
