@@ -43,9 +43,15 @@ const Testimonials = () => {
 
   return (
     <section id="testimonials" className="py-20 relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-20 left-1/4 w-72 h-72 bg-cosmic-accent/20 rounded-full filter blur-[80px] animate-pulse-glow"></div>
+        <div className="absolute bottom-40 right-1/4 w-96 h-96 bg-cosmic-purple/20 rounded-full filter blur-[80px] animate-pulse-glow" style={{ animationDelay: "2s" }}></div>
+      </div>
+      
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-fade-in">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 animate-fade-in font-display">
             What Our <span className="text-gradient">Explorers</span> Say
           </h2>
           <p className="text-gray-300 text-lg animate-fade-in" style={{ animationDelay: "100ms" }}>
@@ -54,7 +60,7 @@ const Testimonials = () => {
         </div>
         
         <div className="relative max-w-4xl mx-auto">
-          <div className="bg-feature-gradient rounded-xl border border-gray-800 p-8 md:p-12 animate-fade-in shadow-lg">
+          <div className="glass-card rounded-xl p-8 md:p-12 animate-fade-in shadow-lg shadow-cosmic-accent/10">
             <div className="flex flex-col items-center text-center">
               <div className="flex mb-6">
                 {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
@@ -74,7 +80,7 @@ const Testimonials = () => {
                   <img 
                     src={testimonials[currentIndex].avatar} 
                     alt={testimonials[currentIndex].name} 
-                    className="w-12 h-12 rounded-full object-cover border-2 border-blue-500" 
+                    className="w-12 h-12 rounded-full object-cover border-2 border-cosmic-accent" 
                   />
                 </div>
                 <div className="text-left">
@@ -89,14 +95,14 @@ const Testimonials = () => {
           <div className="flex justify-center mt-8 space-x-4">
             <button 
               onClick={prevTestimonial}
-              className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 text-white transition-colors"
+              className="p-2 rounded-full glass-card hover:bg-cosmic-accent/20 text-white transition-colors"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button 
               onClick={nextTestimonial}
-              className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 text-white transition-colors"
+              className="p-2 rounded-full glass-card hover:bg-cosmic-accent/20 text-white transition-colors"
               aria-label="Next testimonial"
             >
               <ChevronRight className="w-6 h-6" />
@@ -109,7 +115,7 @@ const Testimonials = () => {
               <button
                 key={index}
                 className={`mx-1 w-2 h-2 rounded-full transition-all ${
-                  currentIndex === index ? "w-4 bg-blue-500" : "bg-gray-600"
+                  currentIndex === index ? "w-6 bg-cosmic-accent" : "bg-gray-600"
                 }`}
                 onClick={() => setCurrentIndex(index)}
                 aria-label={`Go to testimonial ${index + 1}`}
@@ -118,9 +124,6 @@ const Testimonials = () => {
           </div>
         </div>
       </div>
-      
-      {/* Background accent */}
-      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-glow-blue opacity-5"></div>
     </section>
   );
 };

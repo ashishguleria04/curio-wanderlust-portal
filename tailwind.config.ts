@@ -19,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Inter', 'sans-serif'],
+				display: ['Space Grotesk', 'sans-serif']
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -64,6 +68,14 @@ export default {
 					700: '#0369a1',
 					800: '#075985',
 					900: '#0c4a6e',
+				},
+				cosmic: {
+					dark: '#070B14',
+					blue: '#1E3A8A',
+					purple: '#7E22CE',
+					cyan: '#0891B2',
+					accent: '#8B5CF6',
+					highlight: '#00CCFF',
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -144,6 +156,24 @@ export default {
 						opacity: '1'
 					}
 				},
+				'shimmer': {
+					'0%': {
+						backgroundPosition: '-200% 0',
+					},
+					'100%': {
+						backgroundPosition: '200% 0',
+					},
+				},
+				'pulse-glow': {
+					'0%, 100%': {
+						opacity: '0.6',
+						transform: 'scale(1)',
+					},
+					'50%': {
+						opacity: '1',
+						transform: 'scale(1.05)',
+					},
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -153,14 +183,20 @@ export default {
 				'fade-in': 'fade-in 0.6s ease-out',
 				'fade-out': 'fade-out 0.6s ease-out',
 				'scale-in': 'scale-in 0.5s ease-out',
+				'shimmer': 'shimmer 3s ease-in-out infinite',
+				'pulse-glow': 'pulse-glow 4s ease-in-out infinite',
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'hero-pattern': 'linear-gradient(to bottom, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)), url("/hero-bg.jpg")',
-				'curio-gradient': 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
+				'hero-pattern': 'linear-gradient(to bottom, rgba(7, 11, 20, 0.7), rgba(7, 11, 20, 0.9)), url("/hero-bg.jpg")',
+				'curio-gradient': 'linear-gradient(135deg, #070B14 0%, #0F1A2A 100%)',
+				'cosmic-gradient': 'linear-gradient(to bottom right, #0F1A2A, #070B14)',
 				'feature-gradient': 'linear-gradient(to bottom right, #1E293B, #0F172A)',
+				'glass-gradient': 'linear-gradient(to bottom right, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.7))',
 				'glow-blue': 'radial-gradient(circle at center, #3B82F6 0%, transparent 70%)',
 				'glow-purple': 'radial-gradient(circle at center, #8B5CF6 0%, transparent 70%)',
+				'glow-cyan': 'radial-gradient(circle at center, #06B6D4 0%, transparent 70%)',
+				'shimmer-gradient': 'linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.2) 25%, rgba(139, 92, 246, 0.2) 50%, rgba(59, 130, 246, 0.2) 75%, transparent 100%)',
 			},
 		}
 	},

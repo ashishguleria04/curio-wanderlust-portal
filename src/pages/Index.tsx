@@ -6,6 +6,7 @@ import HowItWorks from "@/components/HowItWorks";
 import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import DailyCurio from "@/components/DailyCurio";
 
 const Index = () => {
   return (
@@ -15,6 +16,7 @@ const Index = () => {
         <Hero />
         <Features />
         <HowItWorks />
+        <DailyCurio />
         <Testimonials />
         <CTA />
       </main>
