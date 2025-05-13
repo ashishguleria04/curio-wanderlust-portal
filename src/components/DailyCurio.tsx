@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { CalendarDays, Image, RefreshCw } from "lucide-react";
 import { Button } from "./ui/button";
@@ -54,36 +53,46 @@ const DailyCurio = () => {
         </div>
         
         <div className="max-w-4xl mx-auto">
-          <Card className="glass-card overflow-hidden">
+          <Card className="glass-card overflow-hidden rounded-lg shadow-lg">
             <div className="grid md:grid-cols-2">
-              <div className="relative h-64 md:h-auto overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10 md:hidden"></div>
-                <Image className="absolute top-3 left-3 w-6 h-6 text-white z-20 bg-black/40 p-1 rounded" />
-                <img 
-                  src={fact.imageUrl} 
+              {/* Image Section */}
+              <div className="relative h-64 md:h-auto overflow-hidden rounded-t-lg md:rounded-l-lg md:rounded-tr-none">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10"></div>
+                <Image
+                  className="absolute top-3 left-3 w-6 h-6 text-white z-20 bg-black/40 p-1 rounded"
+                />
+                <img
+                  src={fact.imageUrl}
                   alt={fact.category}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105 hover:rotate-1"
                 />
               </div>
-              
-              <CardContent className="p-6 flex flex-col justify-between">
+
+              {/* Content Section */}
+              <CardContent className="p-8 flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center text-xs text-cosmic-highlight mb-3">
-                    <CalendarDays className="w-4 h-4 mr-1" />
-                    <span>{fact.category}</span>
+                  {/* Category */}
+                  <div className="flex items-center text-sm text-cosmic-highlight mb-4">
+                    <CalendarDays className="w-5 h-5 mr-2" />
+                    <span className="font-medium uppercase tracking-wide">{fact.category}</span>
                   </div>
-                  
-                  <p className="text-lg leading-relaxed mb-6">
+
+                  {/* Fact Text */}
+                  <p className="text-lg leading-relaxed text-gray-100 font-light mb-6">
                     "{fact.text}"
                   </p>
                 </div>
-                
+
+                {/* Button */}
                 <Button
-                  className="w-full bg-cosmic-gradient group hover:bg-cosmic-accent/20 transition-all"
+                  className="w-full bg-cosmic-gradient text-white group hover:bg-cosmic-accent/20 focus:ring-2 focus:ring-cosmic-highlight focus:outline-none transition-all relative rounded-md shadow-md"
                   onClick={refreshFact}
+                  aria-label="Show another fact"
                 >
-                  <RefreshCw className="mr-2 h-4 w-4 group-hover:rotate-180 transition-transform duration-500" />
-                  Show Me Another Fact
+                  <RefreshCw
+                    className="mr-2 h-5 w-5 group-hover:rotate-180 transition-transform duration-500"
+                  />
+                  <span>Show Me Another Fact</span>
                 </Button>
               </CardContent>
             </div>
